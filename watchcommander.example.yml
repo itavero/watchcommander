@@ -1,0 +1,13 @@
+country: nl     # see https://apis.justwatch.com/content/locales/state
+providers:      # see https://apis.justwatch.com/content/providers/locale/en_NL (for example)
+  - nfx
+  - dnp
+  - nfk
+  - npo
+  - prv
+sonarr:
+  url: https://my.sonarr.url/api/
+  key: cf362acf978e4d8fb82697c1ac87a408   # see Setting > General > Security > API Key in Sonarr
+radarr:
+  url: https://my.radarr.url/api/
+  key: abcdef1234567890abcdef1234567890   # see Setting > General > Security > API Key in Radarr
