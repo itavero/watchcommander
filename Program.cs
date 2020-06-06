@@ -213,7 +213,7 @@ namespace WatchCommander
                  .WithPageSize(5);
                 if (show.Year.HasValue)
                 {
-                    p.WithReleaseYear(show.Year.Value);
+                    p.WithReleaseYearBetween(from: show.Year.Value);
                 }
 
                 return p;
@@ -243,11 +243,6 @@ namespace WatchCommander
             {
                 // Filter out the movies that actually make sense to check
                 var isMonitored = movie.Monitored ?? true;
-                if (!isMonitored)
-                {
-                    continue;
-                }
-
                 var isDownloaded = movie.Downloaded ?? false;
                 if (!isDownloaded)
                 {
@@ -269,6 +264,11 @@ namespace WatchCommander
                             // No need to check; not yet in released.
                             continue;
                         }
+                    }
+
+                    if (!isMonitored)
+                    {
+                        continue;
                     }
                 }
 
